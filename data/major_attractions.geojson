@@ -1,0 +1,6 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.32185962099408,34.13398913032138]},"properties":{"Id":0,"Attraction":"Hollywood Sign"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.3003882757017,34.11808825549686]},"properties":{"Id":1,"Attraction":"Griffith Observatory"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.29006736358892,34.14753408544401]},"properties":{"Id":2,"Attraction":"Los Angeles Zoo"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.29622482952618,34.119598331785284]},"properties":{"Id":3,"Attraction":"Greek Theatre"}}
+]}

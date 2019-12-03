@@ -1,0 +1,10 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.32048627047692,34.134718781394646]},"properties":{"OBJECTID":0,"Name":"MT. LEE","Elevation":"1,680 ft","ElevNum":1680}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.3224279106576,34.13820231230717]},"properties":{"OBJECTID":1,"Name":"CAHUENGA PEAK","Elevation":"1,820 ft","ElevNum":1820}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.30855089407157,34.137688348729895]},"properties":{"OBJECTID":2,"Name":"MT. CHAPEL","Elevation":"1,614 ft","ElevNum":1614}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.30235647336269,34.13507108524198]},"properties":{"OBJECTID":3,"Name":"MT. BELL","Elevation":"1,582 ft","ElevNum":1582}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.29345005496798,34.134907644568294]},"properties":{"OBJECTID":4,"Name":"BEE ROCK","Elevation":"1,056 ft","ElevNum":1056}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.30096698651806,34.12880699827632]},"properties":{"OBJECTID":5,"Name":"MT. HOLLYWOOD","Elevation":"1,625 ft","ElevNum":1625}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.28713264072687,34.12431260477763]},"properties":{"OBJECTID":6,"Name":"GLENDALE PEAK","Elevation":"1,184 ft","ElevNum":1184}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.27749842989238,34.128535984394716]},"properties":{"OBJECTID":7,"Name":"BEACON HILL","Elevation":"1,001 ft","ElevNum":1001}}
+]}

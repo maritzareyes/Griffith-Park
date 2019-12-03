@@ -1,0 +1,13 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.29363633928865,34.11930793313261]},"properties":{"Id":0,"Restaurant":"Roosevelt Cafe","Rating":4.5,"Price":"$","Type":"American"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.32151288089078,34.1199013059665]},"properties":{"Id":1,"Restaurant":"Beachwood Cafe","Rating":3.5,"Price":"$$","Type":"American"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.30772398640708,34.11391770214683]},"properties":{"Id":2,"Restaurant":"Trails Cafe","Rating":4,"Price":"$","Type":"American"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.2813470254938,34.14818755183728]},"properties":{"Id":3,"Restaurant":"Crossroads West Cafe","Rating":4,"Price":"$$","Type":"American"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.28725739839469,34.11059027650985]},"properties":{"Id":4,"Restaurant":"Cafe Los Feliz","Rating":4,"Price":"$$","Type":"American/Cafe"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.2872509698661,34.10754315395693]},"properties":{"Id":5,"Restaurant":"Farfalla  Trattoria","Rating":4,"Price":"$$","Type":"Italian"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.2872509698661,34.10913100051932]},"properties":{"Id":6,"Restaurant":"Yuca's","Rating":4,"Price":"$$","Type":"Mexican"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.30079652380039,34.101936444234305]},"properties":{"Id":7,"Restaurant":"Fukurou Ramne","Rating":4,"Price":"$","Type":"Japanese"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.31332675208368,34.1019064748814]},"properties":{"Id":8,"Restaurant":"Torung Restaurant","Rating":4,"Price":"$","Type":"Thai"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.29198882691044,34.10260297074501]},"properties":{"Id":9,"Restaurant":"Sidewalkgrill","Rating":4,"Price":"$$","Type":"Mediterranean"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-118.26867677836391,34.123685718330336]},"properties":{"Id":10,"Restaurant":"The Morrison","Rating":4.5,"Price":"$$","Type":"American"}}
+]}

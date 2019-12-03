@@ -1,0 +1,233 @@
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Griffith Park</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.2.4/dist/esri-leaflet.js"
+    integrity="sha512-tyPum7h2h36X52O2gz+Pe8z/3l+Y9S1yEUscbVs5r5aEY5dFmP1WWRY/WLLElnFHa+k1JBQZSCDGwEAnm2IxAQ=="
+    crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/leaflet-sidebar.css">
+    <link rel="stylesheet" href="css/leaflet-routing-machine.css">
+    <link rel="stylesheet" href="css/leaflet-search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link href="https://fonts.googleapis.com/css?family=Coustard|Oswald|Roboto|Questrial" rel="stylesheet">
+
+
+    <!-- <link rel="stylesheet" href="css/leaflet.draw.css"> -->
+
+
+</head>
+<body>
+
+  <div id="sidebar" class="sidebar collapsed">
+      <!-- Nav tabs -->
+      <div class="sidebar-tabs">
+          <ul role="tablist">
+              <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+              <li><a href="#profile" role="tab"><i class="fa fa-search"></i></a></li>
+              <li><a href="#messages" role="tab"><i class="fa fa-star"></i></a></li>
+              <li><a href="#info" role="tab"><i class="fa fa-file"></i></a></li>
+          </ul>
+
+          <ul role="tablist">
+              <li><a href="#settings" role="tab"><i class="fa fa-info-circle"></i></a></li>
+          </ul>
+      </div>
+
+      <!-- Tab panes -->
+      <div class="sidebar-content">
+          <div class="sidebar-pane" id="home">
+              <h1 class="sidebar-header">
+                  Griffith Park
+                  <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+              </h1>
+
+              <p><h2><b>Welcome!</b></h2></p>
+
+              <p class="intro">Welcome to Griffith Park! Griffith Park is one of LA's top attractions because there are so many things to do in the park.
+              It's a nice escape from the big city, and has incredible views of Los Angeles, which makes it enjoyable for tourists and locals. Vistors can explore
+            Griffith Park through some hiking, and visit major attractions such as the Los Angeles Zoo, Griffith Observatory, and the iconic Hollywood sign. Let't
+          not forget to mention the variety of delicious restaurants there are around that vistors can try after a long day's hike!</p>
+
+
+              <p class="intro">With over 4,210 acres of both natural chapparal-covered terrain and landscaped parkland and picnic areas, Griffith Park is one of the
+                largest municipal parks with urban wilderness areas in the United States. Situated in the eastern Santa Monica Mountain range, the Park’s elevations
+                range from 384 to 1,625 feet above sea level. With an arid climate, the Park’s plant communities vary from coastal sage scrub, oak and walnut woodlands
+                to riparian vegetation with trees in the Park’s deep canyons. The California native plants represented in Griffith Park include the California species
+                of oak, walnut, lilac, mountain mahagony, sages, toyon, and sumac. Present, in small quantities, are the threatened species of manzanita and berberis.</p>
+
+                <p class="intro"></p><img src="img/griffith.jpg" alt="griffith height="370" width="370"">
+
+          </div>
+
+          <div class="sidebar-pane" id="profile">
+              <h1 class="sidebar-header">Search<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+              <h3>Search Points of Interest or Trails</h3>
+              				<div id="search"></div>
+                      <br><br>
+              				<h3>Find Your Location</h3>
+              				<button onclick="findUser()" value="Find Your Location"><i class="fa fa-search"></i>&nbsp; Find Your Location</button>
+              				<input type="button" onclick="resetMap()" value="Locate to Griffith Park"><div></div>
+              				<div></div>
+              				<h3>Find Destination</h3>
+                      <div id="findDest"></div>
+          </div>
+
+          <div class="sidebar-pane" id="messages">
+              <h1 class="sidebar-header">Favorites<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+
+              <h3>Trails</h3>
+
+              <label for="trail_level">Level of Difficulty</label>
+                <select type="trail_level" name="trail_level" id="trail_level" onchange="trailDifficulty()" placeholder="Select Level of Difficulty" class="text ui-widget-content ui-corner-all">
+                    <option disabled selected>Select Level of Difficulty</option>
+                    <option value="showAlltrails">Show All</option>
+                		<option value="easy">Easy</option>
+                		<option value="moderate">Moderate</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <br></br>
+              <label for="trail_length">Length of Trail (miles)</label>
+                <select type="trail_length" name="trail_length" id="trail_length" onchange="trailLength()" placeholder="Select Length of Trail" class="text ui-widget-content ui-corner-all">
+                    <option disabled selected>Select Length of Trail</option>
+                    <option value="showAlltrails">Show All</option>
+                    <option value="lessOne">Less than one mile</option>
+                    <option value="OnetoTwo">One to two miles</option>
+                    <option value="TwotoThree">Two to three miles</option>
+                    <option value="moreThree">More than three miles</option>
+                </select>
+
+                <br></br>
+
+              <h3>Restaurants</h3>
+
+              <label for="rating">Star Rating</label>
+                <select type="rating" name="rating" id="rating" onchange="restuarantsRating()"placeholder="Select Star Rating" class="text ui-widget-content ui-corner-all">
+                    <option disabled selected>Select Star Rating</option>
+                    <option value="showAllrestaurants">Show All</option>
+                		<option value="Three">3.5 to 3.9</option>
+                		<option value="Four">4.0 to 4.4 </option>
+                    <option value="Five">4.5 to 5.0</option>
+                </select>
+                <br></br>
+              <label for="type">Type of Restaurant</label>
+                <select type="type" name="type" id="type" onchange="restaurantType()" placeholder="Select Type of Restaurant" class="text ui-widget-content ui-corner-all">
+                    <option disabled selected>Select Type of Restaurant</option>
+                    <option value="showAllrestaurants">Show All</option>
+                    <option value="American">American</option>
+                    <option value="Asian">Asian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Mexican">Mexican</option>
+                </select>
+
+
+
+          </div>
+
+          <div class="sidebar-pane" id="info">
+              <h1 class="sidebar-header">Report Submission<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+
+              <h2>Add a Review</h2>
+
+							<p>Click "Start Editing" to activate the edit buttons on the right side of the map, below the coordinates.</p>
+
+							<input type="button" onclick="startEdits()" value="Click to Start Editing">
+							<input type="button" onclick="stopEdits()" value="Stop Your Editing Session">
+          </div>
+
+          <div class="sidebar-pane" id="settings">
+              <h1 class="sidebar-header">Resources<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+
+              <br></br>
+              <a href="https://www.laparks.org/griffithpark" target="_blank">Griffith Park - City of Los Angeles Department of Recreation and Parks</a>
+              <br></br>
+              <a href="https://www.flaticon.com/" target="_blank">FlatIcon</a>
+              <br></br>
+              <a href="http://www.griffithobservatory.org/about/pdf/Griffith_Park_Map.pdf" target="_blank">Griffith Park Map</a>
+              <br></br>
+              <a href="https://egis3.lacounty.gov/dataportal/tag/parks-and-recreation/" target="_blank">Los Angeles County GIS Data Portal</a>
+              <br></br>
+              <a href="https://www.yelp.com/" target="_blank">Yelp</a>
+              <br></br>
+              <p> All other data on this map was digitized using ArcGIS</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div id="dialog" title="Enter a Review">
+    <form>
+      <fieldset>
+        <label for="firstname">Your First Name</label>
+          <input type="text" name="firstname" id="firstname" placeholder="Enter your First Name" class="text ui-widget-content ui-corner-all">
+          <br></br>
+        <label for="lastname">Your Last Name</label>
+          <input type="text" name="lastname" id="lastname" placeholder="Enter your Last Name" class="text ui-widget-content ui-corner-all">
+      <br></br>
+        <label for="date">Date</label>
+          <input type="date" name="date" id="date" placeholder="Enter Date" class="text ui-widget-content ui-corner-all">
+          <br></br>
+      <label for="category">Category</label>
+        <select type="select" name="category" id="category" placeholder="Select category" class="text ui-widget-content ui-corner-all">
+            <option disabled selected>Select Category</option>
+        		<option value="majorattractions">Major Attractions</option>
+        		<option value="trails">Trails</option>
+            <option value="restaurants">Restaurants</option>
+        		<option value="hazard">Hazard</option>
+        		<option value="other">Other</option>
+        </select>
+        <br></br>
+      <label for="review">About this Point</label>
+        <input type="text" name="review" id="review" placeholder="Review for this point" class="text ui-widget-content ui-corner-all">
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+      </fieldset>
+    </form>
+  </div>
+
+
+
+
+
+    <!-- <a href="https://github.com/Turbo87/sidebar-v2/"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a> -->
+
+  <div id="map" class="sidebar-map"></div>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/leaflet-sidebar.js"></script>
+<script type="text/javascript" src="js/leaflet.ajax.js"></script>
+<script type="text/javascript" src="js/leaflet.ajax.min.js"></script>
+<script type="text/javascript" src="lib/leaflet-search.js"></script>
+<script type="text/javascript" src="lib/leaflet-routing-machine.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<!-- <script type="text/javascript" src="lib/leaflet.js"></script>
+<script type="text/javascript" src="lib/esri-leaflet.js"></script> -->
+
+</body>
+</html>
